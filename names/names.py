@@ -1,4 +1,5 @@
 import time
+from binary_search_tree import BinarySearchTree
 
 start_time = time.time()
 
@@ -12,11 +13,30 @@ f.close()
 
 duplicates = []  # Return the list of duplicates in this data structure
 
-# Replace the nested for loops below with your improvements
-for name_1 in names_1:
-    for name_2 in names_2:
-        if name_1 == name_2:
-            duplicates.append(name_1)
+#Replace the nested for loops below with your improvements
+# for name_1 in names_1:
+#     for name_2 in names_2:
+#         if name_1 == name_2:
+#             duplicates.append(name_1)
+
+# Declaring variable
+# names_1[0] begins with the first name on the list. I receive type error without [0].
+b_tree = BinarySearchTree(names_1[0])
+
+# For all names in names_1 list
+for name in names_1:
+    # Add to binary search tree linked list
+    b_tree.insert(name)
+
+# For all names in names_2 list
+for name in names_2:
+    # Compares name to names in linked list
+    # If binary search tree all ready has name...
+    if b_tree.contains(name):
+        # Append to duplicates list
+        duplicates.append(name)
+
+
 
 end_time = time.time()
 print (f"{len(duplicates)} duplicates:\n\n{', '.join(duplicates)}\n\n")
