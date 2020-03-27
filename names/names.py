@@ -20,7 +20,7 @@ duplicates = []  # Return the list of duplicates in this data structure
 #             duplicates.append(name_1)
 
 # Declaring variable
-# names_1[0] sets first name as head in the Binary Search Tree's linked list.
+# names_1[0] sets first name as head in the Binary Search Tree's linked list
 b_tree = BinarySearchTree(names_1[0])
 
 # For all names in names_1 list
