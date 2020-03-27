@@ -4,7 +4,7 @@ class Node:
         self.value = value
         # reference to the next node in the list
         self.next_node = next_node
-hello
+
     def get_value(self):
         return self.value
 
@@ -46,5 +46,23 @@ class LinkedList:
         return False
 
     def reverse_list(self, node, prev):
-        # You must use recursion for this solution
-        pass
+
+        # If node doesn't exist, return
+        if node is None:
+            return
+        
+        # If node is the only node, return
+        if node.get_next() is None:
+            # Sets linked list head to node
+            self.head = node
+            return
+
+        # Gets next node
+        self.reverse_list(node.get_next(), prev)
+        # The passed in node from get_next() is then set to new_next
+        node.get_next().set_next(node)
+        # Stops recursion loop when next is None
+        node.set_next(None)
+        
+      
+        
