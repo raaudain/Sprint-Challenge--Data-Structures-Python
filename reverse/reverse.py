@@ -4,7 +4,7 @@ class Node:
         self.value = value
         # reference to the next node in the list
         self.next_node = next_node
-
+hello
     def get_value(self):
         return self.value
 
